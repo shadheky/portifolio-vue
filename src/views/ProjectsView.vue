@@ -27,11 +27,15 @@
         },
         methods:{
             async loadProjectsContent(){
-                const req = await fetch(this.baseUrl+"/projects/author/Luiz");
+                try{
+                    const req = await fetch(this.baseUrl+"/projects/author/Luiz");
                 const res = await req.json();
                 
                 this.parseProjectsJsonToCardsContent(Array.from(res));
-                console.log(res, this.cardsContent);
+                }catch(e){
+                    console.log(e);
+                }
+                
             },
             parseProjectsJsonToCardsContent(projectsJson){
                 this.cardsContent = projectsJson.map( element => {
@@ -51,7 +55,7 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+     
       align-items: center;
       margin: 20px 0;
     }
@@ -61,7 +65,10 @@
         grid-template-columns: repeat( 4, 1fr );
         place-items: center;
         width: 80%;
+        column-gap: 20px;
     }
+
+
 
 
     .card {

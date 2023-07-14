@@ -1,7 +1,7 @@
 <template>
     <footer id="footer">
         <span id="logo">
-           Logo
+           Luiz Alberto
         </span>
   
     </footer>
@@ -36,7 +36,9 @@
     }
 
     #logo{
-        margin: 0 20px;
+        margin: 0 auto;
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.3em
     }
 
 

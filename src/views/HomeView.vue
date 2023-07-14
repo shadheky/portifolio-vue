@@ -80,7 +80,7 @@
   }
 
   .icon{
-    margin-right: 4px;
+    margin-right: 10px;
   }
 
   #icons-container .icon{

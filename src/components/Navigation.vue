@@ -1,7 +1,7 @@
 <template>
     <header id="menu">
         <span id="logo">
-            <router-link to="/">Logo</router-link>
+            <router-link to="/">Luiz</router-link>
         </span>
         <ul options>
             <li>
@@ -48,6 +48,7 @@
 </script>
 
 <style  scoped>
+ 
 
     #menu{
         display: flex;
@@ -61,10 +62,12 @@
         position: relative;
     }
 
-    #logo{
+    #logo a{
         height: 80%;
         display: flex;
         align-items: center;
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.3em;
     }
 
     [options]{
