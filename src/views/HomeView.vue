@@ -3,7 +3,7 @@
         <div main-wrapper>
           <span id="apresentation">Oi 👋, eu sou o Luiz</span>
       <h1 id="title-apresentation">
-        Desenvolvedor Back-End
+        Desenvolvedor Backend
         <span id="icons-container">
       
 

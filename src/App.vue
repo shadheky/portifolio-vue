@@ -24,13 +24,12 @@
     *{
       margin: 0;
       padding: 0;
-      font-family: 'Maven Pro', sans-serif;
+      font-family: 'Maven Pro';
       box-sizing: border-box;
     }
 
     #main-view{
-      margin: auto;
-      min-height: 84vh;
+      min-height: 86vh;
     }
 
     a{

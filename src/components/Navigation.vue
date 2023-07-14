@@ -95,7 +95,7 @@
         background-color: white;
         color: black; 
         width: 100%;
-    
+        z-index: 10;
         padding: 4px 20px;
         
     }
