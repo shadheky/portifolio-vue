@@ -88,6 +88,6 @@
 
         .card {
         grid-column: span 4;
-    }
+        }
     }
 </style>

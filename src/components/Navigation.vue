@@ -129,7 +129,7 @@
 
     button{
         height: 80%;
-        background-color: #333;
+        background-color: inherit;
         border: 0 none;
         border-radius: 10px;
         margin-right: 10px;
