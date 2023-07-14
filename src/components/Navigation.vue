@@ -61,17 +61,26 @@
         position: relative;
     }
 
-    ul{
+    #logo{
+        height: 80%;
+        display: flex;
+        align-items: center;
+    }
+
+    [options]{
         list-style: none;
         display: flex;
         justify-content: space-around;
         width: 40%;
+        height: 80%;
+        align-items: center;
+        margin: 0;
       
     }
 
     [options] a{
-        padding: 10px;
-        border-radius: 5px;
+      padding: 10px;
+      border-radius: 2px;
     }
 
     [options] a:hover{
@@ -80,7 +89,7 @@
 
     #mobile-options{
         height: max-content;
-        position: fixed;
+        position: absolute;
         top: 50px;
         right: 0px;
         background-color: white;
@@ -98,17 +107,21 @@
         width: 100%;
         margin: 0;
         padding: 0;
+        list-style: none;
     }
 
     .btn-link{
+        display: flex;
+        justify-content: center;
         width: 100%;
-      
+        margin: 10px auto;
         background-color: #222;
         color: white;
         font-weight: bold;
         box-sizing: border-box;
         padding: 4px;
         height: 40px;
+        text-decoration: none;
     }
 
     button{
@@ -122,6 +135,8 @@
         cursor: pointer;
         display: none;
         transition: .5s;
+        align-items: center;
+        
     }
 
     button:hover{
@@ -139,9 +154,15 @@
         display: none;
      }
      button{
-        display: block;
+        display: flex;
      }
+     
+    }
 
+    @media(min-width: 700px){
+        #mobile-options{
+            display: none;
+        }
     }
 
 

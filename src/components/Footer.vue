@@ -24,8 +24,7 @@
         background-color: #222;
         color: #ccc;
         justify-content: space-between;
-        align-items: center;
-        
+        align-items: center;  
     }
 
     ul{
