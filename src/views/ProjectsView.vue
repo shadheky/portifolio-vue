@@ -19,7 +19,7 @@
         data(){
             return{
                 cardsContent:[],
-                baseUrl:"http://ec2-44-203-167-254.compute-1.amazonaws.com:8080"
+                baseUrl:"https://projetos-api-production.up.railway.app"
             }
         },
         mounted(){

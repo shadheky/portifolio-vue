@@ -35,7 +35,7 @@
     data(){
       return{
         technologyDescription:"/* Clique nas tecnologias ao lado para revelar informações */",
-        baseURL:"http://ec2-44-203-167-254.compute-1.amazonaws.com:8080"
+        baseURL:"https://projetos-api-production.up.railway.app"
       }
     },
     methods:{
