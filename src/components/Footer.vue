@@ -25,6 +25,7 @@
         color: #ccc;
         justify-content: space-between;
         align-items: center;  
+       
     }
 
     ul{

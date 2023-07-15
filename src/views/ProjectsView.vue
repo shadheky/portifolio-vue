@@ -28,7 +28,7 @@
         methods:{
             async loadProjectsContent(){
                 try{
-                    const req = await fetch(this.baseUrl+"/projects/author/Luiz");
+                    const req = await fetch(this.baseUrl+"/projects/author/Luiz Alberto De Souza Abdoral Lopes");
                 const res = await req.json();
                 
                 this.parseProjectsJsonToCardsContent(Array.from(res));
@@ -44,7 +44,8 @@
                         text: element.description,  
                         imgSrc: element.imageURL
                     }
-                } )
+                } 
+                )
             }
         }
     }

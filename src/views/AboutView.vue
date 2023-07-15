@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>Habilidades</h1>
+    <h1 class="title">Habilidades</h1>
     <div id="stack-container">
        <span id="stack">
           <div query-value="HTML" @click="loadTechnologyDescription($event,'HTML')"><img class="stack-icon" src="img/HTML.png" alt=""></div>
@@ -18,6 +18,13 @@
        
           {{technologyDescription}}
        </span>
+    </div>
+    <h1 class="title">Minha formação</h1>
+    <div class="training">
+      <img class="avatar" src="/img/avatar.jpg" alt="">
+      <p>
+        Estou atualmente cursando o segundo semestre de Análise e Desenvolvimento de Sistemas pela universidade Estácio, todavia desenvolvo minhas capacidades na área de desenvolvimento de software desde 2021. 
+      </p>
     </div>
   </div>
 </template>
@@ -56,6 +63,9 @@
 <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
 
+  .title{
+    margin-top: 5vh;
+  }
   .about{
     display: flex;
     flex-direction: column;
@@ -67,11 +77,12 @@
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
-    background-color: #f0faf5;
+    background-color: #fbfaff;
     width: 80%;
     padding: 20px;
     border-radius: 10px;
     max-width: 700px;
+    border: 0.5px solid #ccc;
   }
 
   #technology-description{
@@ -91,6 +102,7 @@
     column-gap: 30px;
     row-gap: 20px;
     padding: 20px;
+    place-items: center;
   }
 
   .stack-icon{
@@ -121,9 +133,30 @@
     background-color: #ccc;
   }
 
+  .training{
+    width: 80%;
+    background-color: #fbfaff;
+    border: 0.5px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 700px;
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  .avatar{
+    width: 200px;
+    border-radius: 100px;
+    margin-bottom: 10%;
+    border: 1px solid #ccc;
+  }
+
   @media (max-width:700px){
     #stack-container{
       flex-direction: column;
+      width: 90%;
+    }
+    .training{
       width: 90%;
     }
 
