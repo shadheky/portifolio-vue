@@ -3,15 +3,15 @@
     <h1 class="title">Habilidades</h1>
     <div id="stack-container">
        <span id="stack">
-          <div query-value="HTML" @click="loadTechnologyDescription($event,'HTML')"><img class="stack-icon" src="img/HTML.png" alt=""></div>
-          <div query-value="CSS"  @click="loadTechnologyDescription($event,'CSS')" ><img class="stack-icon" src="img/CSS.png" alt=""></div>
-          <div query-value="JavaScript"  @click="loadTechnologyDescription($event,'JavaScript')"><img class="stack-icon" src="img/JavaScript.webp" alt=""></div>
-          <div query-value="VueJS"  @click="loadTechnologyDescription($event,'VueJS')"><img class="stack-icon" src="img/Vue.png" alt=""></div>
-          <div query-value="Java"  @click="loadTechnologyDescription($event,'Java')"><img class="stack-icon" src="img/Java.png" alt=""></div>
-          <div query-value="Spring"  @click="loadTechnologyDescription($event,'Spring Framework')"><img class="stack-icon" src="img/Spring.png" alt=""></div>
-          <div query-value="Maven"  @click="loadTechnologyDescription($event,'Maven')"><img class="stack-icon" src="img/Maven.png" alt=""></div>
-          <div query-value="MongoDB"  @click="loadTechnologyDescription($event,'MongoDB')"><img class="stack-icon" src="img/MongoDB.png" alt=""></div>
-          <div query-value="HTML"  @click="loadTechnologyDescription($event,'PostgreSQL')"><img class="stack-icon" src="img/Postgree.png" alt=""></div>
+          <div  @click="loadTechnologyDescription($event,'HTML')"><img class="stack-icon" src="img/HTML.png" alt=""></div>
+          <div   @click="loadTechnologyDescription($event,'CSS')" ><img class="stack-icon" src="img/CSS.png" alt=""></div>
+          <div   @click="loadTechnologyDescription($event,'JavaScript')"><img class="stack-icon" src="img/JavaScript.webp" alt=""></div>
+          <div   @click="loadTechnologyDescription($event,'VueJS')"><img class="stack-icon" src="img/Vue.png" alt=""></div>
+          <div   @click="loadTechnologyDescription($event,'Java')"><img class="stack-icon" src="img/Java.png" alt=""></div>
+          <div   @click="loadTechnologyDescription($event,'Spring Framework')"><img class="stack-icon" src="img/Spring.png" alt=""></div>
+          <div   @click="loadTechnologyDescription($event,'Maven')"><img class="stack-icon" src="img/Maven.png" alt=""></div>
+          <div   @click="loadTechnologyDescription($event,'MongoDB')"><img class="stack-icon" src="img/MongoDB.png" alt=""></div>
+          <div   @click="loadTechnologyDescription($event,'PostgreSQL')"><img class="stack-icon" src="img/Postgree.png" alt=""></div>
 
        </span>
        <span id="technology-description">
@@ -110,7 +110,7 @@
     margin-bottom: 10px;
   }
 
-  div [query-value]{
+  #stack div{
 
     display: flex;
     justify-content: center;
@@ -119,14 +119,14 @@
     box-sizing: border-box;
     border-radius: 8px;
 
+    cursor: pointer;
     width: max-content;
 
   }
   
-  div [query-value]:hover{
+  #stack div:hover{
 
     background-color: #ccc;
-    cursor: pointer;
   }
 
   .bg-change{

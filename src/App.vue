@@ -30,7 +30,7 @@
     }
 
     #main-view{
-      min-height: 86vh;
+      min-height: 100vh;
     }
 
     a{

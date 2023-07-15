@@ -59,7 +59,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 0 15px;
-        position: relative;
+      
     }
 
     #logo a{
@@ -151,7 +151,7 @@
         margin: auto;
     }
 
-    @media (max-width: 700px), (orientation:portrait) { 
+    @media (max-width: 700px) { 
 
      [options]{
         display: none;
@@ -162,7 +162,7 @@
      
     }
 
-    @media(min-width: 700px){
+    @media(min-width: 800px){
         #mobile-options{
             display: none;
         }
