@@ -3,18 +3,19 @@
     <h1>Habilidades</h1>
     <div id="stack-container">
        <span id="stack">
-          <div query-value="HTML" @click="loadTechnologyDescription('HTML')"><img class="stack-icon" src="img/HTML.png" alt=""></div>
-          <div query-value="CSS"  @click="loadTechnologyDescription('CSS')" ><img class="stack-icon" src="img/CSS.png" alt=""></div>
-          <div query-value="JavaScript"  @click="loadTechnologyDescription('JavaScript')"><img class="stack-icon" src="img/JavaScript.webp" alt=""></div>
-          <div query-value="VueJS"  @click="loadTechnologyDescription('VueJS')"><img class="stack-icon" src="img/Vue.png" alt=""></div>
-          <div query-value="Java"  @click="loadTechnologyDescription('Java')"><img class="stack-icon" src="img/Java.png" alt=""></div>
-          <div query-value="Spring"  @click="loadTechnologyDescription('Spring Framework')"><img class="stack-icon" src="img/Spring.png" alt=""></div>
-          <div query-value="Maven"  @click="loadTechnologyDescription('Maven')"><img class="stack-icon" src="img/Maven.png" alt=""></div>
-          <div query-value="MongoDB"  @click="loadTechnologyDescription('MongoDB')"><img class="stack-icon" src="img/MongoDB.png" alt=""></div>
-          <div query-value="HTML"  @click="loadTechnologyDescription('PostgreSQL')"><img class="stack-icon" src="img/Postgree.png" alt=""></div>
+          <div query-value="HTML" @click="loadTechnologyDescription($event,'HTML')"><img class="stack-icon" src="img/HTML.png" alt=""></div>
+          <div query-value="CSS"  @click="loadTechnologyDescription($event,'CSS')" ><img class="stack-icon" src="img/CSS.png" alt=""></div>
+          <div query-value="JavaScript"  @click="loadTechnologyDescription($event,'JavaScript')"><img class="stack-icon" src="img/JavaScript.webp" alt=""></div>
+          <div query-value="VueJS"  @click="loadTechnologyDescription($event,'VueJS')"><img class="stack-icon" src="img/Vue.png" alt=""></div>
+          <div query-value="Java"  @click="loadTechnologyDescription($event,'Java')"><img class="stack-icon" src="img/Java.png" alt=""></div>
+          <div query-value="Spring"  @click="loadTechnologyDescription($event,'Spring Framework')"><img class="stack-icon" src="img/Spring.png" alt=""></div>
+          <div query-value="Maven"  @click="loadTechnologyDescription($event,'Maven')"><img class="stack-icon" src="img/Maven.png" alt=""></div>
+          <div query-value="MongoDB"  @click="loadTechnologyDescription($event,'MongoDB')"><img class="stack-icon" src="img/MongoDB.png" alt=""></div>
+          <div query-value="HTML"  @click="loadTechnologyDescription($event,'PostgreSQL')"><img class="stack-icon" src="img/Postgree.png" alt=""></div>
 
        </span>
        <span id="technology-description">
+       
           {{technologyDescription}}
        </span>
     </div>
@@ -31,12 +32,20 @@
       }
     },
     methods:{
-        async loadTechnologyDescription(technologyName){
+        async loadTechnologyDescription(event, technologyName){
           const req = await fetch(this.baseURL + `/technologys/name/${technologyName}`);
 
           const resJSON = await req.json();
 
+          ( event.target.tagName === 'IMG')? this.addIconBgColor(event.target.parentElement): this.addIconBgColor(event.target)
           this.technologyDescription = `/*${resJSON.shortDescription}*/`;
+        },
+        addIconBgColor(element){
+          this.removeAllBgIconColor();
+          element.classList.add("bg-change");
+        },
+        removeAllBgIconColor(){
+          document.querySelectorAll('.bg-change').forEach( e => e.classList.remove('bg-change'))
         }
     }
 
@@ -60,7 +69,7 @@
     margin-top: 20px;
     background-color: #f0faf5;
     width: 80%;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
     max-width: 700px;
   }
@@ -72,6 +81,8 @@
     padding: 20px;
     margin-bottom: 20px;
     font-family: 'Source Code Pro', monospace;
+    
+    border-radius: 5px;
   }
 
   #stack{
@@ -89,11 +100,14 @@
 
   div [query-value]{
 
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 8px;
-    transition: .5s;
+
+    width: max-content;
 
   }
   
@@ -103,20 +117,20 @@
     cursor: pointer;
   }
 
+  .bg-change{
+    background-color: #ccc;
+  }
+
   @media (max-width:700px){
     #stack-container{
       flex-direction: column;
+      width: 90%;
     }
 
     #technology-description{
       width: 100%;
     }
-
-    div [query-value]:hover{
   
-      background-color: inherit;
-  
-    }
   }
 
   
