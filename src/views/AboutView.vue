@@ -35,7 +35,7 @@
     data(){
       return{
         technologyDescription:"/* Clique nas tecnologias ao lado para revelar informações */",
-        baseURL:"http://localhost:5050"
+        baseURL:"http://ec2-44-203-167-254.compute-1.amazonaws.com:8080"
       }
     },
     methods:{
@@ -162,6 +162,7 @@
 
     #technology-description{
       width: 100%;
+   
     }
   
   }

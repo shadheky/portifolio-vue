@@ -19,7 +19,7 @@
         data(){
             return{
                 cardsContent:[],
-                baseUrl:"http://localhost:5050"
+                baseUrl:"http://ec2-44-203-167-254.compute-1.amazonaws.com:8080"
             }
         },
         mounted(){
