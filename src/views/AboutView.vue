@@ -15,7 +15,7 @@
 
        </span>
        <span id="technology-description">
-       
+          <h1 :style="technologyTitleColor">{{technologyTitle}}</h1>
           {{technologyDescription}}
        </span>
     </div>
@@ -35,24 +35,35 @@
     data(){
       return{
         technologyDescription:"/* Clique nas tecnologias ao lado para revelar informações */",
+        technologyTitle:"",
+        technologyTitleColor: "color: #000",
         baseURL:"https://projetos-api-production.up.railway.app"
       }
     },
     methods:{
         async loadTechnologyDescription(event, technologyName){
           const req = await fetch(this.baseURL + `/technologys/name/${technologyName}`);
+          const technologyResponse = await req.json();
 
-          const resJSON = await req.json();
+          ( event.target.tagName === 'IMG' )? this.addIconBgColor(event.target.parentElement): this.addIconBgColor(event.target)
+          this.showTitle(technologyResponse.name);
+          this.changeTitleColor(technologyResponse.mainColorInHex);
 
-          ( event.target.tagName === 'IMG')? this.addIconBgColor(event.target.parentElement): this.addIconBgColor(event.target)
-          this.technologyDescription = `/*${resJSON.shortDescription}*/`;
+          console.log(technologyResponse.mainColorInHex);
+          this.technologyDescription = `/*${technologyResponse.shortDescription}*/`;
         },
         addIconBgColor(element){
           this.removeAllBgIconColor();
           element.classList.add("bg-change");
         },
         removeAllBgIconColor(){
-          document.querySelectorAll('.bg-change').forEach( e => e.classList.remove('bg-change'))
+          document.querySelectorAll('.bg-change').forEach( e => e.classList.remove('bg-change'));
+        },
+        showTitle(text){
+          this.technologyTitle = text;
+        },
+        changeTitleColor( colorInHex ){
+          this.technologyTitleColor = `color:${colorInHex};`;
         }
     }
 
@@ -88,6 +99,7 @@
   #technology-description{
     width: 49%;
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
     padding: 20px;
     margin-bottom: 20px;
@@ -95,6 +107,8 @@
     
     border-radius: 5px;
   }
+
+
 
   #stack{
     display: grid;
