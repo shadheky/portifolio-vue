@@ -84,11 +84,13 @@
 
     @media(max-width: 700px){
         .card-container{
-            grid-template-columns: auto;
+           display: flex;
+           flex-direction: column;
+
         }
 
         .card {
-        grid-column: span 4;
+            width: 100%;
         }
     }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <header id="menu">
-        <span id="logo">
+        <span id="logo"  @click="changeCurrentMobileMenuSituation()">
             <router-link to="/">Luiz</router-link>
         </span>
         <ul options>
