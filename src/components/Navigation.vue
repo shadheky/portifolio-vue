@@ -1,6 +1,6 @@
 <template>
     <header id="menu">
-        <span id="logo"  @click="changeCurrentMobileMenuSituation()">
+        <span id="logo"  @click=" closeMobileMenu()">
             <router-link to="/">Luiz</router-link>
         </span>
         <ul options>
@@ -42,6 +42,9 @@
         methods:{
             changeCurrentMobileMenuSituation(){
                 this.mobileMenuIsShowded = !this.mobileMenuIsShowded;
+            },
+            closeMobileMenu(){
+                this.mobileMenuIsShowded = false;
             }
         }
     }
