@@ -1,6 +1,6 @@
 <template>
   <div id="card" class="card" style="width: 100%;">
-  <img class="card-img-top" :src="cardContent.imgSrc" alt="Card image cap">
+  <a :href="cardContent.projectUrl" target="_blank"><img class="card-img-top" :src="cardContent.imgSrc" alt="Card image cap"></a>
   <div class="card-body">
     <h5 class="card-title">{{cardContent.title}}</h5>
     <p class="card-text">{{cardContent.text}}</p>

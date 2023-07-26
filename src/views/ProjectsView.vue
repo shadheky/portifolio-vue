@@ -42,7 +42,10 @@
                     return {
                         title: element.name,
                         text: element.description,  
-                        imgSrc: element.imageURL
+                        imgSrc: element.imageURL,
+                        projectUrl: element.projectUrl
+
+
                     }
                 } 
                 )
