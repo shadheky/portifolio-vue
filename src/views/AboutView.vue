@@ -5,7 +5,7 @@
        <span id="stack">
           <div  @click="loadTechnologyDescription($event,'HTML')"><img class="stack-icon" src="img/HTML.png" alt=""></div>
           <div   @click="loadTechnologyDescription($event,'CSS')" ><img class="stack-icon" src="img/CSS.png" alt=""></div>
-          <div   @click="loadTechnologyDescription($event,'JavaScript')"><img class="stack-icon" src="img/JavaScript.webp" alt=""></div>
+          <div   @click="loadTechnologyDescription($event,'JavaScript')"><img class="stack-icon" src="img/JavaScript.jpg" alt=""></div>
           <div   @click="loadTechnologyDescription($event,'VueJS')"><img class="stack-icon" src="img/Vue.png" alt=""></div>
           <div   @click="loadTechnologyDescription($event,'Java')"><img class="stack-icon" src="img/Java.png" alt=""></div>
           <div   @click="loadTechnologyDescription($event,'Spring Framework')"><img class="stack-icon" src="img/Spring.png" alt=""></div>
