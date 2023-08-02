@@ -37,7 +37,7 @@
         technologyDescription:"/* Clique nas tecnologias ao lado para revelar informações */",
         technologyTitle:"",
         technologyTitleColor: "color: #000",
-        baseURL:"https://projetos-api-production.up.railway.app"
+        baseURL:"https://projetos-api.onrender.com"
       }
     },
     methods:{

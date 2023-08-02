@@ -2,7 +2,7 @@
     <div class="projects-container">
         <h1>Projetos</h1>
         <div class="card-container">
-            <Card v-for="project in cardsContent" :key="project.id" :card-content="project"/>
+            <Card v-for="project, in cardsContent" :key="project.id" :card-content="project"/>
          
         </div>
     </div>
@@ -19,7 +19,7 @@
         data(){
             return{
                 cardsContent:[],
-                baseUrl:"https://projetos-api-production.up.railway.app"
+                baseUrl:"https://projetos-api.onrender.com"
             }
         },
         mounted(){
