@@ -32,12 +32,15 @@
 <script>
   export default{
     name:"About",
+    props:{
+      baseURL:String
+    },
     data(){
       return{
         technologyDescription:"/* Clique nas tecnologias ao lado para revelar informações */",
         technologyTitle:"",
         technologyTitleColor: "color: #000",
-        baseURL:"https://projetos-api.onrender.com"
+       
       }
     },
     methods:{
@@ -49,7 +52,7 @@
           this.showTitle(technologyResponse.name);
           this.changeTitleColor(technologyResponse.mainColorInHex);
 
-          console.log(technologyResponse.mainColorInHex);
+         
           this.technologyDescription = `/*${technologyResponse.shortDescription}*/`;
         },
         addIconBgColor(element){

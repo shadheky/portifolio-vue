@@ -16,10 +16,13 @@
         components:{
             Card
         },
+        props:{
+            baseURL:String
+        },
+
         data(){
             return{
                 cardsContent:[],
-                baseUrl:"https://projetos-api.onrender.com"
             }
         },
         mounted(){
@@ -28,7 +31,7 @@
         methods:{
             async loadProjectsContent(){
                 try{
-                    const req = await fetch(this.baseUrl+"/projects/author/Luiz Alberto De Souza Abdoral Lopes");
+                    const req = await fetch(this.baseURL+"/projects/author/Luiz Alberto De Souza Abdoral Lopes");
                 const res = await req.json();
                 
                 this.parseProjectsJsonToCardsContent(Array.from(res));

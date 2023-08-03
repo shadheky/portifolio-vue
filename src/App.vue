@@ -1,6 +1,6 @@
 <template>
   <Navigation />
-  <router-view id="main-view"/>
+  <router-view id="main-view" :baseURL="baseURL"/>
   <Footer/>
 </template>
 
@@ -13,6 +13,11 @@
     components:{
       Navigation, 
       Footer
+    },
+    data(){
+      return{
+        baseURL:"https://projetos-api-production.up.railway.app"
+      }
     }
   }
 
