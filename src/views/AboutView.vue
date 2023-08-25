@@ -40,18 +40,17 @@
       
         technologyDescription:"/* Clique nas tecnologias ao lado para revelar informações */",
         technologyTitle:"",
-        technologyTitleColor: "color: #000"
+        technologyTitleColor: "color: #000",
+        allTechnologys: []
        
 
        
       }
     },
     methods:{
-        async loadTechnologyDescription(event, technologyName){
-          const req = await fetch(this.baseURL + `/technologys`);
-          const technologyResponse = await req.json();
-
-          const technologySelected = technologyResponse.filter( tech => tech.name === technologyName )[0];
+         loadTechnologyDescription(event, technologyName){
+        
+          const technologySelected = this.allTechnologys.filter( tech => tech.name === technologyName )[0];
 
 
           ( event.target.tagName === 'IMG' )? this.addIconBgColor(event.target.parentElement): this.addIconBgColor(event.target)
@@ -60,6 +59,11 @@
 
          
           this.technologyDescription = `/*${technologySelected.shortDescription}*/`;
+        },
+        async loadAlTechnologys() {
+          const req = await fetch(this.baseURL + `/technologys`);
+          const technologyResponse = await req.json();
+          this.allTechnologys = technologyResponse;
         },
         addIconBgColor(element){
           this.removeAllBgIconColor();
@@ -77,7 +81,7 @@
         
     },
     mounted() {
- 
+      this.loadAlTechnologys()
     }
 
   }
