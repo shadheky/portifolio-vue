@@ -1,8 +1,10 @@
 <template>
     <div class="projects-container">
-        <h1>Projetos</h1>
-        <div class="card-container">
-            <Card v-for="project, in cardsContent" :key="project.id" :card-content="project"/>
+        <h1 class="text-center">Projetos</h1>
+        <div class="card-container container">
+           <div class="row justify-content-center">
+                <Card class="col-md-6 col-xl-4" v-for="project, in cardsContent" :key="project.id" :card-content="project"/>
+           </div>
          
         </div>
     </div>
@@ -56,47 +58,3 @@
         }
     }
 </script>
-
-<style scoped>
-    .projects-container{
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-     
-      align-items: center;
-      margin: 20px 0;
-    }
-
-    .card-container{
-        display: grid;
-        grid-template-columns: repeat( 4, 1fr );
-        place-items: center;
-        width: 80%;
-        column-gap: 20px;
-    }
-
-
-
-
-    .card {
-        grid-column: span 2;
-    }
-
-    .card:nth-last-child(1):nth-child(odd) {
-        grid-column: 2 / span 2;
-        margin-top: 20px;
-
-    }
-
-    @media(max-width: 700px){
-        .card-container{
-           display: flex;
-           flex-direction: column;
-
-        }
-
-        .card {
-            width: 100%;
-        }
-    }
-</style>
