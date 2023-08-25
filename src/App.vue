@@ -16,7 +16,7 @@
     },
     data(){
       return{
-        baseURL:"https://projetos-api-production.up.railway.app"
+        baseURL:"https://projetos-api.onrender.com"
       }
     }
   }
