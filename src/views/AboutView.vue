@@ -37,23 +37,29 @@
     },
     data(){
       return{
+      
         technologyDescription:"/* Clique nas tecnologias ao lado para revelar informações */",
         technologyTitle:"",
-        technologyTitleColor: "color: #000",
+        technologyTitleColor: "color: #000"
+       
+
        
       }
     },
     methods:{
         async loadTechnologyDescription(event, technologyName){
-          const req = await fetch(this.baseURL + `/technologys/name/${technologyName}`);
+          const req = await fetch(this.baseURL + `/technologys`);
           const technologyResponse = await req.json();
 
+          const technologySelected = technologyResponse.filter( tech => tech.name === technologyName )[0];
+
+
           ( event.target.tagName === 'IMG' )? this.addIconBgColor(event.target.parentElement): this.addIconBgColor(event.target)
-          this.showTitle(technologyResponse.name);
-          this.changeTitleColor(technologyResponse.mainColorInHex);
+          this.showTitle(technologySelected.name);
+          this.changeTitleColor(technologySelected.mainColorInHex);
 
          
-          this.technologyDescription = `/*${technologyResponse.shortDescription}*/`;
+          this.technologyDescription = `/*${technologySelected.shortDescription}*/`;
         },
         addIconBgColor(element){
           this.removeAllBgIconColor();
@@ -67,7 +73,11 @@
         },
         changeTitleColor( colorInHex ){
           this.technologyTitleColor = `color:${colorInHex};`;
-        }
+        },
+        
+    },
+    mounted() {
+ 
     }
 
   }
